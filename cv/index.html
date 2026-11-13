@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Životopis | Lic. Rudolf Chudý – Senior Backend C# Developer</title>
+  <meta name="description" content="Profesionální životopis: Lic. Rudolf Chudý – Senior Backend C# Developer & Microsoft Consultant s více než 30 lety praxe (.NET, Blazor, SQL, Oracle)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #172554;
+      --primary-light: #3b82f6;
+      --accent: #0284c7;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --tag-bg: #eff6ff;
+      --tag-text: #1d4ed8;
+      --success: #15803d;
+      --success-bg: #f0fdf4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    /* Top Action Bar (Print / Back) */
+    .top-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 28px;
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background-color: #ffffff;
+      color: var(--text-muted);
+      border-color: var(--border-color);
+    }
+
+    .btn-outline:hover {
+      color: var(--text-main);
+      background-color: #f8fafc;
+    }
+
+    /* Header */
+    .header {
+      padding: 36px 40px;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #ffffff;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .header-content h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .header-subtitle {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #93c5fd;
+      margin-bottom: 16px;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      font-size: 0.875rem;
+      color: #cbd5e1;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.15s ease;
+    }
+
+    .contact-item:hover {
+      color: #ffffff;
+    }
+
+    .contact-item i {
+      color: #60a5fa;
+      font-size: 0.95rem;
+    }
+
+    .avatar-wrapper img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Main Body Layout */
+    .content-body {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 36px;
+      padding: 36px 40px;
+    }
+
+    /* Section Styling */
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .section-title i {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .summary-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* Timeline & Experience Items */
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+      border-left: 2px solid #e2e8f0;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -27px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 2px var(--primary-light);
+    }
+
+    .timeline-item.active .timeline-dot {
+      background: var(--success);
+      box-shadow: 0 0 0 2px var(--success);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      margin-bottom: 4px;
+    }
+
+    .job-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .job-period {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--tag-bg);
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+
+    .job-company {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .job-description {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .job-description ul {
+      margin-top: 6px;
+      padding-left: 18px;
+    }
+
+    .job-description li {
+      margin-bottom: 4px;
+    }
+
+    .job-badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #f1f5f9;
+      color: #334155;
+    }
+
+    /* Sidebar Skills & Education */
+    .skill-group {
+      margin-bottom: 20px;
+    }
+
+    .skill-group-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag-skill {
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      color: #1e293b;
+    }
+
+    .tag-expert {
+      background: var(--tag-bg);
+      border-color: #bfdbfe;
+      color: var(--tag-text);
+      font-weight: 600;
+    }
+
+    /* Education Item */
+    .edu-item {
+      margin-bottom: 16px;
+    }
+
+    .edu-school {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .edu-degree {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .edu-field {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+    }
+
+    .edu-period {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* Highlights Box */
+    .highlight-card {
+      background: #f8fafc;
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .highlight-card strong {
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+        font-size: 11pt;
+      }
+
+      .container {
+        box-shadow: none;
+        border: none;
+        max-width: 100%;
+        border-radius: 0;
+      }
+
+      .top-actions {
+        display: none !important;
+      }
+
+      .header {
+        background: #1e293b !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 20px 24px;
+      }
+
+      .content-body {
+        padding: 20px 24px;
+        gap: 20px;
+      }
+
+      .timeline-item, .section, .edu-item {
+        page-break-inside: avoid;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .avatar-wrapper {
+        display: none;
+      }
+
+      .content-body {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Action Bar -->
+    <div class="top-actions">
+      <a href="../" class="btn btn-outline">
+        <i class="fa-solid fa-arrow-left"></i> Zpět na hlavní web
+      </a>
+      <button onclick="window.print()" class="btn btn-primary">
+        <i class="fa-solid fa-print"></i> Vytisknout / Uložit jako PDF
+      </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <h1>Lic. Rudolf Chudý</h1>
+        <div class="header-subtitle">Senior Backend C# Developer & Microsoft Consultant</div>
+        <div class="contact-grid">
+          <span class="contact-item">
+            <i class="fa-solid fa-location-dot"></i> Orlická 976, 518 01 Dobruška, ČR
+          </span>
+          <a href="tel:+420777591903" class="contact-item">
+            <i class="fa-solid fa-phone"></i> +420 777 591 903
+          </a>
+          <a href="mailto:rudolf.chudy@gmail.com" class="contact-item">
+            <i class="fa-solid fa-envelope"></i> rudolf.chudy@gmail.com
+          </a>
+          <a href="https://ruchudy.github.io" target="_blank" class="contact-item">
+            <i class="fa-solid fa-globe"></i> ruchudy.github.io
+          </a>
+          <a href="https://www.linkedin.com/in/rudolf-chudy-6243593" target="_blank" class="contact-item">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/RuChudy" target="_blank" class="contact-item">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+      <div class="avatar-wrapper">
+        <img src="../images/avatar.jpg" alt="Lic. Rudolf Chudý" onerror="this.style.display='none'" />
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content-body">
+
+      <!-- Left Column (Experience & Profile) -->
+      <div class="main-column">
+
+        <!-- Executive Summary -->
+        <section class="section">
+          <h2 class="section-title">
+            <i class="fa-solid fa-user-tie"></i> Profesní profil
+          </h2>
+          <p class="summary-text">
+            Jsem zkušený softwarový inženýr a seniorní backendový vývojář s více než 30 lety praxe v komerčním vývoji (od roku 1992/1993). Specializuji se na návrh a implementaci robustních podnikových informačních systémů, webových portálů, integračních služeb i desktopových MVVM / MVP aplikací na platformě <strong>Microsoft .NET (C#, .NET Core 3.1 až po aktuální .NET 10, ASP.NET Core, Blazor, WPF, WinForms)</strong>, s využitím <strong>Entity Framework (EF Core)</strong> i <strong>Dapper</strong> a databázích (<strong>MS-SQL, Oracle, PostgreSQL, MySQL, Firebird, MongoDB, Redis</strong>).
+          </p>
+          <p class="summary-text" style="margin-top: 8px;">
+            Mám bohaté zkušenosti s čistou architekturou (Clean Code, návrhové vzory, Unit testy), agilním vývojem (Scrum), integračními službami (REST, SOAP, WCF, Datové schránky ISDS) i s pokročilými moderními frameworky jako <strong>ABP.io</strong> a <strong>Telerik UI for Blazor</strong>.
+          </p>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="section">
+          <h2 class="section-title">
+            <i class="fa-solid fa-briefcase"></i> Pracovní zkušenosti
+          </h2>
+
+          <div class="timeline">
+
+            <!-- Intrum Czech -->
+            <div class="timeline-item active">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <span class="job-title">Senior Backend C# Developer</span>
+                <span class="job-period">11/2025 – dosud</span>
+              </div>
+              <div class="job-company">Intrum Czech, s.r.o.</div>
+              <div class="job-description">
+                Vývoj a rozvoj podnikových aplikací na platformě C# / .NET. Specializace na backendovou integraci – importy příchozích pohledávek do MS-SQL Serveru, automatizované zpracování a inteligentní kategorizace zpráv z datových schránek (ISDS).
+              </div>
+              <div class="job-badge-list">
+                <span class="badge">C#</span>
+                <span class="badge">.NET</span>
+                <span class="badge">MS-SQL Server</span>
+                <span class="badge">T-SQL</span>
+                <span class="badge">Datové schránky (ISDS)</span>
+                <span class="badge">Integrační služby</span>
+              </div>
+            </div>
+
+            <!-- Sympulse -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <span class="job-title">Full-stack Developer, Blazor C# Programátor</span>
+                <span class="job-period">01/2025 – 08/2025</span>
+              </div>
+              <div class="job-company">Sympulse</div>
+              <div class="job-description">
+                Kompletní přepis staršího podnikového informačního systému do moderního technologického stacku bez zásahů do existující MS-SQL databáze (Database-First přístup s EF Core). Vývoj aplikační logiky a moderního UI v Blazoru s využitím ABP.io Frameworku a Telerik UI komponent.
+              </div>
+              <div class="job-badge-list">
+                <span class="badge">C# .NET Core 9</span>
+                <span class="badge">Blazor</span>
+                <span class="badge">ABP.io</span>
+                <span class="badge">Telerik UI</span>
+                <span class="badge">EF Core</span>
+                <span class="badge">MS-SQL</span>
+                <span class="badge">Azure DevOps</span>
+              </div>
+            </div>
+
+            <!-- Qinshift / ČSOB -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <span class="job-title">Back-end C# .NET Core Programátor</span>
+                <span class="job-period">02/2024 – 12/2024</span>
+              </div>
+              <div class="job-company">Qinshift (Klient: ČSOB / Pojišťovny)</div>
+              <div class="job-description">
+                Vývoj moderní webové platformy pro online sjednávání a nákup pojištění. Architektura a vývoj integrační SOAP služby pro pojišťovnu Allianz, sjednocení různorodých SOAP a REST-API služeb pod jednotné backendové rozhraní. Důraz na Clean Code, Unit testy a code review.
+              </div>
+              <div class="job-badge-list">
+                <span class="badge">C# .NET Core 9</span>
+                <span class="badge">Web API</span>
+                <span class="badge">SOAP / WSDL</span>
+                <span class="badge">REST</span>
+                <span class="badge">Swagger</span>
+                <span class="badge">MS-SQL</span>
+                <span class="badge">Scrum</span>
+              </div>
+            </div>
+
+            <!-- INVENTI / ČÚZK -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <span class="job-title">Senior Software Development Engineer / C# Programátor</span>
+                <span class="job-period">06/2021 – 12/2023</span>
+              </div>
+              <div class="job-company">INVENTI (Klient: Státní správa zeměměřictví a katastru – ČÚZK)</div>
+              <div class="job-description">
+                Působení v roli seniorního vývojáře pro klíčové státní projekty ČÚZK:<br />
+                <strong>Návrh na vklad (nv.cuzk.cz):</strong> Údržba a rozvoj celostátní aplikace pro elektronická podání vkladů do katastru nemovitostí (.NET Framework 4.8 WebForms, WCF, XML, LINQ, Devart Oracle Entity, Oracle DB). Implementace ověřování platnosti podpisů PDF pomocí eSignature a knihovny Bouncy Castle Cryptography dle norem EU.<br />
+                <strong>Docházka ČÚZK:</strong> Vývoj backendu v .NET Core 3.1 REST API pro Angular frontend s Oracle DB a integračními testy.
+              </div>
+              <div class="job-badge-list">
+                <span class="badge">.NET Framework 4.8</span>
+                <span class="badge">.NET Core 3.1</span>
+                <span class="badge">Oracle Database</span>
+                <span class="badge">PL/SQL</span>
+                <span class="badge">MS-SQL</span>
+                <span class="badge">WCF</span>
+                <span class="badge">Bouncy Castle</span>
+                <span class="badge">Azure DevOps</span>
+              </div>
+            </div>
+
+            <!-- ade software technologies -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <span class="job-title">Senior Microsoft Consultant</span>
+                <span class="job-period">2012 – 2021</span>
+              </div>
+              <div class="job-company">ade software technologies, s. r. o. / OSVČ</div>
+              <div class="job-description">
+                Zakázkový vývoj podnikových systémů: sledování výroby pro automotive (Hronovský s.r.o.), CRM řešení (FSO), mobilní objednávky pro obchodní zástupce (VIA s.r.o.). Platformy C# ASP.NET MVC, WebForms, MS-SQL, SVN, Git.
+              </div>
+            </div>
+
+            <!-- Impuls Leasing Austria -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <span class="job-title">Lead Software Development Engineer</span>
+                <span class="job-period">2005 – 2011</span>
+              </div>
+              <div class="job-company">Impuls Leasing Austria / Creditinfo Solutions</div>
+              <div class="job-description">
+                Vývoj klíčových leasingových a reportingových systémů: exporty portfolia pro NRKI a Rakouskou národní banku (OeNB Zentralobligo), centrální generování PDF smluv (DocuCreator), e-shop zabavených předmětů (bazar.ilaustria.cz) a správa dlužníků (Upomínky).
+              </div>
+            </div>
+
+            <!-- GE Capital Leasing -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <span class="job-title">Business Application Developer</span>
+                <span class="job-period">1999/2000 – 2004</span>
+              </div>
+              <div class="job-company">GE Capital Leasing, a. s.</div>
+              <div class="job-description">
+                Vývoj systémů GE DocuServer (virtuální tiskový monitor, záchyt PostScriptu, převod do PDF a archivace v Oracle DB přes OO4O) a GE Correspondence (COM modul integrující šablony MS Word pro automatický tisk klientských dopisů s daty z Oracle).
+              </div>
+            </div>
+
+            <!-- Historická praxe -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <span class="job-title">Předchozí systémová a vývojářská praxe</span>
+                <span class="job-period">1992 – 1999</span>
+              </div>
+              <div class="job-company">GMC Software Technology | VGHMÚř Dobruška | ProDos</div>
+              <div class="job-description">
+                <strong>GMC (1998–1999):</strong> Team Leader týmu vývoje softwarového studia pro vysokorychlostní tisk (PCL, PostScript), ANSI C makro procesor.<br />
+                <strong>Vojenský geografický úřad (1992–1997):</strong> Digitalizace leteckých snímků, GIS (Fodis I & II, WinRas spline interpolace rastrů, SHP, GeoTIFF, C++, Intel ASM).<br />
+                <strong>ProDos (1993–1994):</strong> Nefrologický IS Nefris pro dialyzační centra (C++, CodeBase IV).
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Column (Skills, Education, Languages) -->
+      <div class="side-column">
+
+        <!-- Skills Section -->
+        <section class="section">
+          <h2 class="section-title">
+            <i class="fa-solid fa-code"></i> Dovednosti
+          </h2>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Backend & Jazyky</div>
+            <div class="tags-container">
+              <span class="tag-skill tag-expert">C# (.NET Core – .NET 10)</span>
+              <span class="tag-skill tag-expert">ASP.NET Core</span>
+              <span class="tag-skill tag-expert">Blazor</span>
+              <span class="tag-skill tag-expert">ABP.io</span>
+              <span class="tag-skill tag-expert">Entity Framework Core</span>
+              <span class="tag-skill tag-expert">Dapper</span>
+              <span class="tag-skill tag-expert">LINQ</span>
+              <span class="tag-skill tag-expert">Desktop (MVVM / MVP)</span>
+              <span class="tag-skill">WPF / WinForms</span>
+              <span class="tag-skill">.NET Framework 4.8</span>
+              <span class="tag-skill">WCF / WebForms</span>
+              <span class="tag-skill">C / C++</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Databáze & Dotazování</div>
+            <div class="tags-container">
+              <span class="tag-skill tag-expert">MS-SQL Server</span>
+              <span class="tag-skill tag-expert">T-SQL</span>
+              <span class="tag-skill tag-expert">Oracle Database</span>
+              <span class="tag-skill tag-expert">PL/SQL</span>
+              <span class="tag-skill tag-expert">PostgreSQL</span>
+              <span class="tag-skill tag-expert">MongoDB</span>
+              <span class="tag-skill">MySQL</span>
+              <span class="tag-skill">Firebird</span>
+              <span class="tag-skill">Redis</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Integrace & Web</div>
+            <div class="tags-container">
+              <span class="tag-skill tag-expert">RESTful API</span>
+              <span class="tag-skill tag-expert">SOAP / WSDL</span>
+              <span class="tag-skill tag-expert">Datové schránky (ISDS)</span>
+              <span class="tag-skill">XML / XSLT / JSON</span>
+              <span class="tag-skill">Swagger / OpenAPI</span>
+              <span class="tag-skill">Bouncy Castle (eSignature)</span>
+              <span class="tag-skill">Postman</span>
+              <span class="tag-skill">JavaScript / jQuery</span>
+              <span class="tag-skill">HTML5 / CSS3</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Nástroje & Metodiky</div>
+            <div class="tags-container">
+              <span class="tag-skill tag-expert">Visual Studio 2022</span>
+              <span class="tag-skill tag-expert">Git / GitHub</span>
+              <span class="tag-skill tag-expert">Azure DevOps</span>
+              <span class="tag-skill">Docker</span>
+              <span class="tag-skill">IIS Server</span>
+              <span class="tag-skill">Clean Code & OOP</span>
+              <span class="tag-skill">Scrum / Agilní vývoj</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+          <h2 class="section-title">
+            <i class="fa-solid fa-graduation-cap"></i> Vzdělání
+          </h2>
+
+          <div class="edu-item">
+            <div class="edu-school">Vysoká škola řízení Edukacja (Polsko)</div>
+            <div class="edu-degree">Titul Lic. (bakalářský stupeň)</div>
+            <div class="edu-field">Obor: Management (Informatika)</div>
+            <div class="edu-period">2013 – 2017</div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-school">SPŠ elektrotechnická Dobruška</div>
+            <div class="edu-degree">Maturitní zkouška</div>
+            <div class="edu-field">Obor: Energetika a výpočetní technika</div>
+            <div class="edu-period">1988 – 1992</div>
+          </div>
+        </section>
+
+        <!-- Certifications & Languages -->
+        <section class="section">
+          <h2 class="section-title">
+            <i class="fa-solid fa-certificate"></i> Certifikace
+          </h2>
+          <div class="edu-item">
+            <div class="edu-school">Microsoft Certified Professional (MCP)</div>
+            <div class="edu-field">Windows NT Server</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-school">Vyhláška č. 50/1978 Sb.</div>
+            <div class="edu-field">Odborná způsobilost v elektrotechnice</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-school">Řidičský průkaz</div>
+            <div class="edu-field">Skupiny A, B</div>
+          </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="section">
+          <h2 class="section-title">
+            <i class="fa-solid fa-language"></i> Jazyky
+          </h2>
+          <div style="font-size: 0.9rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 6px;">
+            <div><strong>Čeština:</strong> Mateřský jazyk</div>
+            <div><strong>Angličtina:</strong> Pracovní / technická znalost (čtení dokumentace, písemná komunikace)</div>
+            <div><strong>Ruština:</strong> Základní znalost</div>
+          </div>
+        </section>
+
+        <!-- Highlights / Key Projects Callout -->
+        <section class="section">
+          <h2 class="section-title">
+            <i class="fa-solid fa-star"></i> Reference & Klienti
+          </h2>
+          <div class="highlight-card">
+            <strong>Bankovnictví & Pojišťovnictví</strong>
+            ČSOB, Allianz integrace, GE Capital Leasing
+          </div>
+          <div class="highlight-card">
+            <strong>Státní správa</strong>
+            ČÚZK (elektronická podání do katastru, ověřování e-podpisů dle EU)
+          </div>
+          <div class="highlight-card">
+            <strong>Inkasní správa & B2B</strong>
+            Intrum Czech (import pohledávek, ISDS), Impuls Leasing Austria
+          </div>
+          <div class="highlight-card">
+            <strong>Stavebnictví & Automotive</strong>
+            Metrostav (výkresový portál WebDAV), Hronovský s.r.o.
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

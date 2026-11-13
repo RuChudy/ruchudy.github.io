@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="cs" xml:lang="cs">
 <head>
-  <title>Já Rudolf Chudý</title>
+  <title>Lic. Rudolf Chudý | Senior Backend C# Developer</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="w3.css">
@@ -16,80 +16,188 @@ span.reverse{unicode-bidi:bidi-override;direction:rtl;}
 .w3-sidebar{width:120px;background:#222;}
 #main{margin-left:120px;}
 @media only screen and (max-width: 600px) {#main {margin-left: 0;}}
+
+/* Language Toggle Rules */
+body.lang-en-active .lang-cs { display: none !important; }
+body:not(.lang-en-active) .lang-en { display: none !important; }
+.lang-switch { position: fixed; top: 12px; right: 16px; z-index: 1000; }
+
+/* Skill Pills */
+.skill-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  margin: 4px 3px;
+  background: #1c1c1c;
+  color: #cbd5e1;
+  border: 1px solid #333;
+  border-radius: 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.skill-pill.pill-green {
+  background: #142a1d;
+  color: #4ade80;
+  border-color: #1e4d30;
+  font-weight: 600;
+}
+.skill-pill:hover {
+  background: #262626;
+  border-color: #22c55e;
+  color: #ffffff;
+}
   </style>
 </head>
 <body class="w3-black">
-  <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-    <img src="images/avatar.jpg" style="width:100%" />
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-home w3-xxlarge"></i><p>DOMŮ</p></a>
-    <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-user w3-xxlarge"></i><p>ZNALOSTI</p></a>
-    <a href="#reference" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-eye w3-xxlarge"></i><p>REFERENCE</p></a>
-    <a href="#repo" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-cloud w3-xxlarge"></i><p>REPO</p></a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-envelope w3-xxlarge"></i><p>KONTAKT</p></a>
-  </nav>
-  <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="#" class="w3-bar-item w3-button" style="width:25% !important">DOMŮ</a>
-      <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ZNALOSTI</a>
-      <a href="#reference" class="w3-bar-item w3-button" style="width:25% !important">REFERENCE</a>
-      <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">KONTAKT</a>
+
+  <!-- Language Switch -->
+  <div class="lang-switch">
+    <div class="w3-bar w3-border w3-border-grey w3-round w3-small" style="background:rgba(20,20,20,0.85);">
+      <button id="btn-cs" onclick="setLang('cs')" class="w3-bar-item w3-button w3-text-white w3-grey">CZ</button>
+      <button id="btn-en" onclick="setLang('en')" class="w3-bar-item w3-button w3-text-white">EN</button>
     </div>
   </div>
+
+  <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+    <img src="images/avatar.jpg" style="width:100%" />
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-home w3-xxlarge"></i><p><span class="lang-cs">DOMŮ</span><span class="lang-en">HOME</span></p></a>
+    <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-user w3-xxlarge"></i><p><span class="lang-cs">KVALIFIKACE</span><span class="lang-en">ABOUT</span></p></a>
+    <a href="#skills" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-code w3-xxlarge"></i><p><span class="lang-cs">ZNALOSTI</span><span class="lang-en">SKILLS</span></p></a>
+    <a href="#reference" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-eye w3-xxlarge"></i><p><span class="lang-cs">REFERENCE</span><span class="lang-en">REVIEWS</span></p></a>
+    <a href="#repo" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-cloud w3-xxlarge"></i><p><span class="lang-cs">REPO</span><span class="lang-en">REPOS</span></p></a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-envelope w3-xxlarge"></i><p><span class="lang-cs">KONTAKT</span><span class="lang-en">CONTACT</span></p></a>
+  </nav>
+
+  <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+      <a href="#" class="w3-bar-item w3-button" style="width:20% !important"><span class="lang-cs">DOMŮ</span><span class="lang-en">HOME</span></a>
+      <a href="#about" class="w3-bar-item w3-button" style="width:20% !important"><span class="lang-cs">O MNĚ</span><span class="lang-en">ABOUT</span></a>
+      <a href="#skills" class="w3-bar-item w3-button" style="width:20% !important"><span class="lang-cs">SKILLS</span><span class="lang-en">SKILLS</span></a>
+      <a href="#contact" class="w3-bar-item w3-button" style="width:20% !important"><span class="lang-cs">KONTAKT</span><span class="lang-en">CONTACT</span></a>
+    </div>
+  </div>
+
   <div class="w3-padding-large" id="main">
     <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
       <h1 class="w3-jumbo"><span class="w3-hide-small">Lic.</span> Rudolf Chudý</h1>
-      <p>Senior Microsoft Consultant</p>
-      <p>Contract Programmer</p>
+      <p>Senior Backend C# Developer</p>
+      <p><span class="lang-cs">Microsoft Consultant &amp; Programátor</span><span class="lang-en">Microsoft Consultant &amp; Programmer</span></p>
       <img src="images/operator.jpg" alt="me" class="w3-image" width="992" height="1108" />
     </header>
     <div class="w3-content w3-justify w3-text-grey w3-padding-24" id="about">
-      <h2 class="w3-text-light-grey">Kvalifikace</h2>
+      <h2 class="w3-text-light-grey"><span class="lang-cs">Kvalifikace</span><span class="lang-en">Qualifications</span></h2>
       <hr style="width:200px" class="w3-opacity" />
-      <p>
-        Jsem zkušený softwarový vývojář s bohatou praxí a hlubokou znalostí
-        Microsoft technologií, včetně C++ a C# .Net Core.
-      </p>
-      <p>
-        Během posledních pěti let jsem se intenzivně zaměřoval na moderní vývoj
-        webových aplikací pomocí Blazor, ASP.NET Core MVC a REST-API, s důrazem
-        na automatizované testování. Mám také rozsáhlé zkušenosti s vývojem
-        na straně klienta pomocí technologií JavaScript, jQuery a Node.js.
-      </p>
+      <div class="lang-cs">
+        <p>
+          Jsem zkušený softwarový inženýr s více než 30 lety praxe v IT a hlubokou znalostí
+          Microsoft technologií, především C#, moderního .NET (od .NET Core 3.1 až po aktuální .NET 10), Blazor a C++.
+        </p>
+        <p>
+          Věnuji se vývoji podnikových backendových systémů, REST a SOAP integračních služeb, webových portálů i desktopových MVVM / MVP aplikací
+          s využitím Entity Framework Core i Dapper. Mám rozsáhlé zkušenosti s relačními databázemi i NoSQL (MongoDB, Redis) a frontendovými technologiemi.
+        </p>
+      </div>
+      <div class="lang-en">
+        <p>
+          I am an experienced software engineer with over 30 years of IT practice and deep knowledge of
+          Microsoft technologies, specializing in C#, modern .NET (from .NET Core 3.1 to current .NET 10), Blazor, and C++.
+        </p>
+        <p>
+          I focus on developing enterprise backend systems, REST &amp; SOAP integration services, web portals, and desktop MVVM / MVP applications
+          utilizing Entity Framework Core and Dapper. I have extensive experience with relational databases and NoSQL (MongoDB, Redis) as well as frontend technologies.
+        </p>
+      </div>
       <ul>
         <li>MS-SQL (SQL, T-SQL, LINQ)</li>
-        <li>Oracle (SQL, PL/SQL a LINQ)</li>
-        <li>MySQL, Firebird</li>
-        <li>aktuálně MongoDB a Redis</li>
+        <li>Oracle (SQL, PL/SQL, LINQ)</li>
+        <li>PostgreSQL, MySQL, Firebird</li>
+        <li>MongoDB, Redis (NoSQL)</li>
       </ul>
-      <p>Mám rozsáhlé zkušenosti se všemi fázemi vývoje softwaru, od úvodní
-        analýzy přes návrh až po samotnou implementaci a následné zaškolení.
-        Klíčová je pro mě nejen technická stránka, ale i schopnost propojit
-        byznys s technologií. Jako komunikativní týmový hráč aktivně pracuji
-        s klienty, abych přesně pochopil jejich potřeby a zajistil, že výsledná
-        aplikace splní veškeré jejich požadavky a cíle.</p>
+      <p class="lang-cs">
+        Mám rozsáhlé zkušenosti se všemi fázemi vývoje softwaru, od úvodní analýzy přes architekturu až po samotnou implementaci,
+        testování a nasazení. Kladu důraz na čistý kód (Clean Code), spolehlivost a schopnost efektivně propojit byznys s technologií.
+      </p>
+      <p class="lang-en">
+        I have extensive experience with all phases of software development, from initial analysis and architecture to implementation,
+        testing, and deployment. I emphasize Clean Code, reliability, and bridging business requirements with technology.
+      </p>
     </div>
     <div class="w3-padding-24 w3-content w3-text-grey" id="skills">
-      <h2 class="w3-padding-16 w3-text-light-grey">Znalosti</h2>
+      <h2 class="w3-padding-16 w3-text-light-grey"><span class="lang-cs">Znalosti</span><span class="lang-en">Skills</span></h2>
       <hr style="width:200px" class="w3-opacity" />
-      <p class="w3-wide">C#, .NET, ASP.NET CORE</p>
-      <div class="w3-white">
-        <div class="w3-dark-grey" style="height:28px;width:98%"></div>
+
+      <p class="w3-wide" style="margin:14px 0 6px 0;font-size:0.92rem;">C#, .NET (.NET Core – .NET 10), Blazor</p>
+      <div style="background:#262626;height:10px;border-radius:6px;overflow:hidden;">
+        <div style="height:10px;width:98%;background:#16a34a;border-radius:6px;"></div>
       </div>
-      <p class="w3-wide">SQL, T-SQL, PL/SQL</p>
-      <div class="w3-white">
-        <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+
+      <p class="w3-wide" style="margin:14px 0 6px 0;font-size:0.92rem;">SQL, T-SQL, PL/SQL, PostgreSQL, MongoDB</p>
+      <div style="background:#262626;height:10px;border-radius:6px;overflow:hidden;">
+        <div style="height:10px;width:95%;background:#16a34a;border-radius:6px;"></div>
       </div>
-      <p class="w3-wide">C / C++</p>
-      <div class="w3-white">
-        <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+
+      <p class="w3-wide" style="margin:14px 0 6px 0;font-size:0.92rem;">Entity Framework Core, Dapper, REST &amp; SOAP API</p>
+      <div style="background:#262626;height:10px;border-radius:6px;overflow:hidden;">
+        <div style="height:10px;width:90%;background:#16a34a;border-radius:6px;"></div>
       </div>
-      <p class="w3-wide">JavaScript, Node.js, jQuery</p>
-      <div class="w3-white">
-        <div class="w3-dark-grey" style="height:28px;width:70%"></div>
+
+      <p class="w3-wide" style="margin:14px 0 6px 0;font-size:0.92rem;"><span class="lang-cs">Desktopové aplikace (MVVM / MVP, WPF, WinForms)</span><span class="lang-en">Desktop Applications (MVVM / MVP, WPF, WinForms)</span></p>
+      <div style="background:#262626;height:10px;border-radius:6px;overflow:hidden;">
+        <div style="height:10px;width:85%;background:#16a34a;border-radius:6px;"></div>
+      </div>
+
+      <p class="w3-wide" style="margin:14px 0 6px 0;font-size:0.92rem;">C / C++</p>
+      <div style="background:#262626;height:10px;border-radius:6px;overflow:hidden;">
+        <div style="height:10px;width:80%;background:#16a34a;border-radius:6px;"></div>
+      </div>
+
+      <p class="w3-wide" style="margin:14px 0 6px 0;font-size:0.92rem;">JavaScript, Node.js, jQuery</p>
+      <div style="background:#262626;height:10px;border-radius:6px;overflow:hidden;">
+        <div style="height:10px;width:70%;background:#16a34a;border-radius:6px;"></div>
+      </div>
+
+      <!-- Skill Pills -->
+      <div class="w3-margin-top" style="padding-top:18px;">
+        <span class="skill-pill pill-green">C#</span>
+        <span class="skill-pill pill-green">.NET Core – .NET 10</span>
+        <span class="skill-pill pill-green">ASP.NET Core</span>
+        <span class="skill-pill pill-green">Blazor</span>
+        <span class="skill-pill pill-green">ABP.io</span>
+        <span class="skill-pill pill-green">Entity Framework Core</span>
+        <span class="skill-pill pill-green">Dapper</span>
+        <span class="skill-pill pill-green">LINQ</span>
+        <span class="skill-pill pill-green">Desktop (MVVM / MVP)</span>
+        <span class="skill-pill pill-green">MS-SQL (T-SQL)</span>
+        <span class="skill-pill pill-green">Oracle (PL/SQL)</span>
+        <span class="skill-pill pill-green">PostgreSQL</span>
+        <span class="skill-pill pill-green">MongoDB</span>
+        <span class="skill-pill pill-green">RESTful API</span>
+        <span class="skill-pill pill-green">SOAP / WSDL</span>
+        <span class="skill-pill">WPF</span>
+        <span class="skill-pill">WinForms</span>
+        <span class="skill-pill">C / C++</span>
+        <span class="skill-pill">WCF</span>
+        <span class="skill-pill">MySQL</span>
+        <span class="skill-pill">Firebird</span>
+        <span class="skill-pill">Redis</span>
+        <span class="skill-pill">Datové schránky (ISDS)</span>
+        <span class="skill-pill">Bouncy Castle (eSignature)</span>
+        <span class="skill-pill">Swagger / OpenAPI</span>
+        <span class="skill-pill">Postman</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">jQuery</span>
+        <span class="skill-pill">Node.js</span>
+        <span class="skill-pill">Visual Studio 2022</span>
+        <span class="skill-pill">Git / GitHub</span>
+        <span class="skill-pill">Azure DevOps</span>
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">IIS</span>
+        <span class="skill-pill">Clean Code</span>
+        <span class="skill-pill">Scrum / Agile</span>
       </div>
     </div>
     <div class="w3-padding-24 w3-content w3-text-grey" id="reference">
-      <h2 class="w3-text-light-grey">Reference</h2>
+      <h2 class="w3-text-light-grey"><span class="lang-cs">Reference</span><span class="lang-en">References</span></h2>
       <hr style="width:200px" class="w3-opacity" />
       <div class="w3-row-padding w3-margin-top">
         <div class="w3-quarter"><div class="w3-card-4 w3-center"><img src="images/hronovsky.png" style="width:100%;max-width:170px;" class="w3-image"></img></div></div>
@@ -101,32 +209,33 @@ span.reverse{unicode-bidi:bidi-override;direction:rtl;}
         <ul class="w3-ul nb">
           <li class="nb">
             <img src="images/radek.jpg" alt="" class="w3-left w3-circle w3-margin-right" style="width:80px" />
-            <p><span class="w3-large w3-margin-right w3-text-white">Ing. Radomír Kopecký</span><span class="w3-hide-small"> Vedoucí technologického rozvoje.</span></p>
-            <p>Ruda nám velice pomohl školením ASP .Net technologií.</p>
+            <p><span class="w3-large w3-margin-right w3-text-white">Ing. Radomír Kopecký</span><span class="w3-hide-small"><span class="lang-cs"> Vedoucí technologického rozvoje.</span><span class="lang-en"> Head of Tech Development.</span></span></p>
+            <p><span class="lang-cs">Ruda nám velice pomohl školením ASP .Net technologií.</span><span class="lang-en">Ruda helped us immensely with ASP.NET technology training.</span></p>
           </li>	
           <li class="nb">
             <img src="images/david.jpg" alt="" class="w3-left w3-circle w3-margin-right" style="width:80px" />
             <p><span class="w3-large w3-margin-right w3-text-white">David Veselý</span><span class="w3-hide-small"> Owner of software company.</span></p>
-            <p>Pečlivý, spolehlivý, ochotný a přístupný novým technologiím. Vytrhl nám trn z paty.</p>
+            <p><span class="lang-cs">Pečlivý, spolehlivý, ochotný a přístupný novým technologiím. Vytrhl nám trn z paty.</span><span class="lang-en">Diligent, reliable, helpful, and open to new technologies. He saved the day for us.</span></p>
           </li>
         </ul>
       </div>
     </div>
     <div class="w3-padding-24 w3-content w3-text-grey" id="repo">
-      <h2 class="w3-text-light-grey">Odkazy na repo</h2>
+      <h2 class="w3-text-light-grey"><span class="lang-cs">Odkazy na repo</span><span class="lang-en">Repositories</span></h2>
       <hr style="width:200px" class="w3-opacity" />
       <div class="w3-section">
         <p><i class="fa fa-user fa-fw w3-text-white w3-xxlarge w3-margin-right"></i><a href="https://ruchudy.github.io/">ruchudy.github.io</a></p>
+        <p><i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"></i><a href="https://github.com/RuChudy" target="_blank">github.com/RuChudy</a></p>
       </div>
       <br class="w3-hide-small" />
     </div>
     <div class="w3-padding-24 w3-content w3-text-grey" id="contact">
-      <h2 class="w3-text-light-grey">Kontakt na mě</h2>
+      <h2 class="w3-text-light-grey"><span class="lang-cs">Kontakt na mě</span><span class="lang-en">Contact</span></h2>
       <hr style="width:200px" class="w3-opacity" />
       <div class="w3-section">
-        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Orlická 976,<span class="w3-hide-small"> 518 01</span> Dobruška<span class="w3-hide-small">, Czech</span></p>
-        <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Telefon: <span class="reverse">309 195 777 024+</span></p>
-        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i><span class="w3-hide-small"> Email: </span><span class="reverse">zc.tseda@yduhc.flodur</span></p>
+        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Orlická 976,<span class="w3-hide-small"> 518 01</span> Dobruška<span class="w3-hide-small">, Czech Republic</span></p>
+        <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> <span class="lang-cs">Telefon: </span><span class="lang-en">Phone: </span><span class="reverse">309 195 777 024+</span></p>
+        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: <span class="reverse">zc.tseda@yduhc.flodur</span></p>
       </div>
       <br class="w3-hide-small" />
     </div>
@@ -134,5 +243,27 @@ span.reverse{unicode-bidi:bidi-override;direction:rtl;}
       <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
     </footer>
   </div>
+
+  <script>
+    function setLang(lang) {
+      if (lang === 'en') {
+        document.body.classList.add('lang-en-active');
+        document.getElementById('btn-en').classList.add('w3-grey');
+        document.getElementById('btn-cs').classList.remove('w3-grey');
+        document.documentElement.lang = 'en';
+      } else {
+        document.body.classList.remove('lang-en-active');
+        document.getElementById('btn-cs').classList.add('w3-grey');
+        document.getElementById('btn-en').classList.remove('w3-grey');
+        document.documentElement.lang = 'cs';
+      }
+      try { localStorage.setItem('site_lang', lang); } catch (e) {}
+    }
+    (function() {
+      var saved = 'cs';
+      try { saved = localStorage.getItem('site_lang') || 'cs'; } catch (e) {}
+      setLang(saved);
+    })();
+  </script>
 </body>
 </html>
