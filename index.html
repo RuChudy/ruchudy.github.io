@@ -15,6 +15,7 @@ span.reverse{unicode-bidi:bidi-override;direction:rtl;}
 .w3-row-padding img{margin-bottom:12px;}
 .w3-sidebar{width:120px;background:#222;}
 #main{margin-left:120px;}
+#about,#skills > p.w3-wide{color:#d4d4d4;}
 @media only screen and (max-width: 600px) {#main {margin-left: 0;}}
 
 /* Language Toggle Rules */
@@ -37,13 +38,13 @@ body:not(.lang-en-active) .lang-en { display: none !important; }
 }
 .skill-pill.pill-green {
   background: #142a1d;
-  color: #4ade80;
+  color: #67c587;
   border-color: #1e4d30;
   font-weight: 600;
 }
 .skill-pill:hover {
   background: #262626;
-  border-color: #22c55e;
+  border-color: #32ab64;
   color: #ffffff;
 }
   </style>
@@ -59,7 +60,7 @@ body:not(.lang-en-active) .lang-en { display: none !important; }
   </div>
 
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-    <img src="images/avatar.jpg" style="width:100%" />
+    <img src="images/ja.jpg" style="width:100%" />
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-home w3-xxlarge"></i><p><span class="lang-cs">DOMŮ</span><span class="lang-en">HOME</span></p></a>
     <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-user w3-xxlarge"></i><p><span class="lang-cs">KVALIFIKACE</span><span class="lang-en">ABOUT</span></p></a>
     <a href="#skills" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><i class="fa fa-code w3-xxlarge"></i><p><span class="lang-cs">ZNALOSTI</span><span class="lang-en">SKILLS</span></p></a>
@@ -82,9 +83,9 @@ body:not(.lang-en-active) .lang-en { display: none !important; }
       <h1 class="w3-jumbo"><span class="w3-hide-small">Lic.</span> Rudolf Chudý</h1>
       <p>Senior Backend C# Developer</p>
       <p><span class="lang-cs">Microsoft Consultant &amp; Programátor</span><span class="lang-en">Microsoft Consultant &amp; Programmer</span></p>
-      <img src="images/operator.jpg" alt="me" class="w3-image" width="992" height="1108" />
+      <img src="images/operator-code.jpg" alt="me" class="w3-image" width="1594" height="987" />
     </header>
-    <div class="w3-content w3-justify w3-text-grey w3-padding-24" id="about">
+    <div class="w3-content w3-justify w3-padding-24" id="about">
       <h2 class="w3-text-light-grey"><span class="lang-cs">Kvalifikace</span><span class="lang-en">Qualifications</span></h2>
       <hr style="width:200px" class="w3-opacity" />
       <div class="lang-cs">
@@ -107,12 +108,16 @@ body:not(.lang-en-active) .lang-en { display: none !important; }
           utilizing Entity Framework Core and Dapper. I have extensive experience with relational databases and NoSQL (MongoDB, Redis) as well as frontend technologies.
         </p>
       </div>
-      <ul>
-        <li>MS-SQL (SQL, T-SQL, LINQ)</li>
-        <li>Oracle (SQL, PL/SQL, LINQ)</li>
-        <li>PostgreSQL, MySQL, Firebird</li>
-        <li>MongoDB, Redis (NoSQL)</li>
-      </ul>
+      <p class="lang-cs">
+        Pomáhám modernizovat stávající podnikové systémy a propojovat aplikace tak, aby spolehlivě sloužily v každodenním provozu.
+        Mezi mé projekty patří přepis informačního systému do Blazoru bez změn v produkční databázi
+        i sjednocení REST a SOAP služeb pro online sjednávání pojištění.
+      </p>
+      <p class="lang-en">
+        I help modernize existing enterprise systems and connect applications to support reliable day-to-day operations.
+        My projects include rewriting an information system in Blazor without changes to the production database
+        and unifying REST and SOAP services for an online insurance platform.
+      </p>
       <p class="lang-cs">
         Mám rozsáhlé zkušenosti se všemi fázemi vývoje softwaru, od úvodní analýzy přes architekturu až po samotnou implementaci,
         testování a nasazení. Kladu důraz na čistý kód (Clean Code), spolehlivost a schopnost efektivně propojit byznys s technologií.
@@ -128,32 +133,22 @@ body:not(.lang-en-active) .lang-en { display: none !important; }
 
       <p class="w3-wide" style="margin:14px 0 6px 0;font-size:0.92rem;">C#, .NET (.NET Core – .NET 10), Blazor</p>
       <div style="background:#262626;height:10px;border-radius:6px;overflow:hidden;">
-        <div style="height:10px;width:98%;background:#16a34a;border-radius:6px;"></div>
+        <div style="height:10px;width:98%;background:#26924e;border-radius:6px;"></div>
       </div>
 
       <p class="w3-wide" style="margin:14px 0 6px 0;font-size:0.92rem;">SQL, T-SQL, PL/SQL, PostgreSQL, MongoDB</p>
       <div style="background:#262626;height:10px;border-radius:6px;overflow:hidden;">
-        <div style="height:10px;width:95%;background:#16a34a;border-radius:6px;"></div>
+        <div style="height:10px;width:95%;background:#26924e;border-radius:6px;"></div>
       </div>
 
       <p class="w3-wide" style="margin:14px 0 6px 0;font-size:0.92rem;">Entity Framework Core, Dapper, REST &amp; SOAP API</p>
       <div style="background:#262626;height:10px;border-radius:6px;overflow:hidden;">
-        <div style="height:10px;width:90%;background:#16a34a;border-radius:6px;"></div>
+        <div style="height:10px;width:90%;background:#26924e;border-radius:6px;"></div>
       </div>
 
       <p class="w3-wide" style="margin:14px 0 6px 0;font-size:0.92rem;"><span class="lang-cs">Desktopové aplikace (MVVM / MVP, WPF, WinForms)</span><span class="lang-en">Desktop Applications (MVVM / MVP, WPF, WinForms)</span></p>
       <div style="background:#262626;height:10px;border-radius:6px;overflow:hidden;">
-        <div style="height:10px;width:85%;background:#16a34a;border-radius:6px;"></div>
-      </div>
-
-      <p class="w3-wide" style="margin:14px 0 6px 0;font-size:0.92rem;">C / C++</p>
-      <div style="background:#262626;height:10px;border-radius:6px;overflow:hidden;">
-        <div style="height:10px;width:80%;background:#16a34a;border-radius:6px;"></div>
-      </div>
-
-      <p class="w3-wide" style="margin:14px 0 6px 0;font-size:0.92rem;">JavaScript, Node.js, jQuery</p>
-      <div style="background:#262626;height:10px;border-radius:6px;overflow:hidden;">
-        <div style="height:10px;width:70%;background:#16a34a;border-radius:6px;"></div>
+        <div style="height:10px;width:85%;background:#26924e;border-radius:6px;"></div>
       </div>
 
       <!-- Skill Pills -->
